@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">MAD Meditation</string>
+
+    <!-- Splash / Onboarding -->
+    <string name="splash_title">MAD Meditation</string>
+    <string name="ob_title">Hello</string>
+    <string name="ob_desc">Enjoy the selection.\nBe attentive. Do well.</string>
+    <string name="btn_signin">Sign In</string>
+    <string name="btn_register">Register</string>
+    <string name="no_acc">No account yet?</string>
+
+    <!-- Login -->
+    <string name="login_title">Sign in</string>
+    <string name="et_email">Email</string>
+    <string name="et_pass">Password</string>
+    <string name="btn_login">Sign in</string>
+    <string name="txt_register">Register</string>
+
+    <!-- Main -->
+    <string name="feel_title">How do you feel today?</string>
+    <string name="feel_calm">Calm</string>
+    <string name="feel_relax">Relaxed</string>
+    <string name="feel_focus">Focused</string>
+    <string name="feel_excite">Excited</string>
+
+    <!-- Profile -->
+    <string name="prof_title">Profile</string>
+    <string name="btn_logout">Logout</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_close">Close</string>
+    <string name="gallery_title">Gallery</string>
+
+    <!-- Messages -->
+    <string name="err_empty">Fill in all fields</string>
+    <string name="err_email">Invalid Email</string>
+    <string name="ok_login">Login successful</string>
+    <string name="msg_feel">Feeling selected: </string>
+</resources>
