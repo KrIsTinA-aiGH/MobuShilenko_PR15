@@ -1,8 +1,459 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
+    android:background="@color/dark_cold_shade">
+
+    <!-- Верхняя панель -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Кнопка меню -->
+        <ImageView
+            android:id="@+id/ivMenu"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@android:drawable/ic_menu_sort_by_size"
+            tools:ignore="ContentDescription" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Логотип -->
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/logo"
+            android:contentDescription="@string/app_name"
+             />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Аватар пользователя -->
+        <ImageView
+            android:id="@+id/ivUserAvatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/icon"
+            android:scaleType="centerCrop" />
+    </LinearLayout>
+
+    <!-- Приветственный текст -->
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/feel_title2"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvFeelQuestion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/feel_title"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:alpha="0.7"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tvWelcome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Горизонтальный список ощущений -->
+    <HorizontalScrollView
+        android:id="@+id/hsvFeelings"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/tvFeelQuestion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/llFeelings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            tools:ignore="VisualLintBounds">
+
+            <!-- Спокойным -->
+            <LinearLayout
+                android:id="@+id/feelingCalm"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginEnd="15dp"
+                android:clickable="true"
+                android:focusable="true"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/icon1"
+                    android:background="@color/white"
+                    android:padding="15dp"
+
+                    android:contentDescription="@string/feel_calm" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/feel_calm"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    tools:ignore="SmallSp" />
+            </LinearLayout>
+
+            <!-- Расслабленным -->
+            <LinearLayout
+                android:id="@+id/feelingRelax"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginEnd="15dp"
+                android:clickable="true"
+                android:focusable="true"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/relax"
+                    android:background="@color/white"
+                    android:padding="15dp"
+                    android:contentDescription="@string/feel_relax" />
+
+                <TextView
+                    android:layout_width="124dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@string/feel_relax"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp,VisualLintBounds" />
+            </LinearLayout>
+
+            <!-- Сосредоточенным -->
+            <LinearLayout
+                android:id="@+id/feelingFocus"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginEnd="15dp"
+                android:clickable="true"
+                android:focusable="true"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/focus"
+                    android:background="@color/white"
+                    android:padding="15dp"
+                    android:contentDescription="@string/feel_focus" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@string/feel_focus"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    tools:ignore="SmallSp" />
+            </LinearLayout>
+
+            <!-- Взволнованным -->
+            <LinearLayout
+                android:id="@+id/feelingExcite"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                tools:ignore="UseCompoundDrawables">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/spiral"
+                    android:background="@color/white"
+                    android:padding="15dp"
+                    android:contentDescription="@string/feel_excite" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/feel_excite"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    tools:ignore="SmallSp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Вертикальный скролл для блоков -->
+    <ScrollView
+        android:id="@+id/svBlocks"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="25dp"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/hsvFeelings"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation">
+
+        <LinearLayout
+            android:id="@+id/llBlocks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="20dp">
+
+            <!-- Блок 1 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Текстовая часть слева -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/block_header"
+                            android:textColor="@color/dark_cold_shade"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginBottom="8dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Short_description"
+                            android:textColor="@color/dark_cold_shade"
+                            android:textSize="14sp"
+                            android:layout_marginBottom="15dp" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/dark_cold_shade"
+                            android:text="@string/more_detailed"
+                            android:textColor="@color/white"
+                            app:cornerRadius="10dp"
+                            tools:ignore="DuplicateSpeakableTextCheck" />
+
+                    </LinearLayout>
+
+                    <!-- Картинка справа -->
+                    <ImageView
+                        android:layout_width="166dp"
+                        android:layout_height="111dp"
+                        android:src="@drawable/preview1"
+                        android:scaleType="centerInside"
+                        tools:ignore="ContentDescription" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- Блок 2 -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <!-- Текстовая часть (слева) -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:text="@string/block_header"
+                            android:textColor="@color/text_color"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="15dp"
+                            android:text="@string/Short_description"
+                            android:textColor="@color/text_color"
+                            android:textSize="14sp" />
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/dark_cold_shade"
+                            android:text="@string/more_detailed"
+                            android:textColor="@color/white"
+                            app:cornerRadius="10dp"
+                            tools:ignore="TextContrastCheck" />
+
+                    </LinearLayout>
+
+                    <!-- Картинка (справа) -->
+                    <ImageView
+                        android:layout_width="166dp"
+                        android:layout_height="111dp"
+                        android:layout_marginStart="15dp"
+
+                        android:scaleType="centerInside"
+                        android:src="@drawable/preview2"
+                        tools:ignore="ContentDescription" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Нижнее меню (TabBar) -->
+    <LinearLayout
+        android:id="@+id/bottomNavigation"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="DisableBaselineAlignment">
+
+        <LinearLayout
+            android:id="@+id/navHome"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:importantForAccessibility="no"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+
+                android:src="@drawable/logo"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navMusic"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:importantForAccessibility="no"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/nav"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/navProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="SpeakableTextPresentCheck">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/profile"
+
+                tools:ignore="ContentDescription,ImageContrastCheck" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

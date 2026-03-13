@@ -1,38 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MAD Meditation</string>
-
-    <!-- Splash / Onboarding -->
     <string name="splash_title">MAD Meditation</string>
     <string name="ob_title">Hello</string>
-    <string name="ob_desc">Enjoy the selection.\nBe attentive. Do well.</string>
+    <string name="ob_desc">Enjoy the selection.\nBe attentive.\nDo well.</string>
     <string name="btn_signin">Sign In</string>
-    <string name="btn_register">Register</string>
     <string name="no_acc">No account yet?</string>
-
-    <!-- Login -->
     <string name="login_title">Sign in</string>
     <string name="et_email">Email</string>
     <string name="et_pass">Password</string>
     <string name="btn_login">Sign in</string>
     <string name="txt_register">Register</string>
-
-    <!-- Main -->
+    <string name="feel_title2">Welcome back, Emil!</string>
     <string name="feel_title">How do you feel today?</string>
     <string name="feel_calm">Calm</string>
     <string name="feel_relax">Relaxed</string>
     <string name="feel_focus">Focused</string>
     <string name="feel_excite">Excited</string>
-
-    <!-- Profile -->
     <string name="prof_title">Profile</string>
     <string name="btn_logout">Logout</string>
     <string name="btn_delete">Delete</string>
     <string name="btn_close">Close</string>
     <string name="gallery_title">Gallery</string>
-
-    <!-- Messages -->
     <string name="err_empty">Fill in all fields</string>
     <string name="err_email">Invalid Email</string>
     <string name="ok_login">Login successful</string>
     <string name="msg_feel">Feeling selected: </string>
+    <string name="block_header">Block Header</string>
+    <string name="Short_description">A short description of the block with two lines</string>
+    <string name="more_detailed">more detailed</string>
+    <string name="exit">exit</string>
+    <string name="name">Emil</string>
+    <string name="home">Home</string>
+    <string name="music">Music</string>
+    <string name="profile">Profile</string>
+    <string name="_11_00">11:00</string>
+    <string name="_15_55">15:55</string>
+    <string name="_11_11">11:11</string>
+    <string name="_19_11">19:11</string>
+    <string name="plus">+</string>
+    <string name="illustration">Illustration</string>
 </resources>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/_752811_1"
+    android:padding="30dp">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="588dp"
+        android:layout_height="328dp"
+        app:srcCompat="@drawable/logo"
+        tools:ignore="ContentDescription,ImageContrastCheck,VisualLintWearMargin,VisualLintBounds" />
+
+    <TextView
+        android:id="@+id/tvObTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ob_title"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        tools:ignore="VisualLintBounds" />
+
+    <TextView
+        android:id="@+id/tvObDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:text="@string/ob_desc"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        tools:ignore="VisualLintBounds" />
+
+    <Button
+        android:id="@+id/btnSignin"
+        android:layout_width="321dp"
+        android:layout_height="61dp"
+        android:backgroundTint="@color/grayish_green_shade"
+        android:text="@string/btn_signin"
+        android:textSize="25sp"
+        app:cornerRadius="10dp"
+        tools:ignore="VisualLintWearMargin,VisualLintBounds,VisualLintButtonSize" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        tools:ignore="VisualLintBounds">
+
+        <TextView
+            android:id="@+id/tvNoAcc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_acc"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            tools:ignore="VisualLintBounds" />
+
+        <TextView
+            android:id="@+id/tvRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/txt_register"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck,VisualLintBounds" />
+
+    </LinearLayout>
+
+</LinearLayout>

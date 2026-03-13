@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_cold_shade"
+    tools:ignore="MissingClass">
+    <!-- УБРАЛ android:padding="30dp" -->
+
+    <!-- Декоративный фон (листья) - на весь низ БЕЗ отступов -->
+
+    <!-- Логотип -->
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="447dp"
+        android:layout_height="269dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/group_28"
+        tools:layout_editor_absoluteX="-18dp"
+        tools:layout_editor_absoluteY="529dp"
+        tools:ignore="ContentDescription,MissingConstraints,VisualLintBounds" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="82dp"
+        android:layout_height="86dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Заголовок Sign in -->
+    <TextView
+        android:id="@+id/tvLoginTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="136dp"
+        android:text="@string/login_title"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Email поле -->
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="284dp"
+        android:layout_marginEnd="30dp"
+        android:autofillHints=""
+        android:background="@android:drawable/edit_text"
+        android:hint="@string/et_email"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <!-- Пароль поле -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="352dp"
+        android:layout_marginEnd="30dp"
+        android:background="@android:drawable/edit_text"
+        android:hint="@string/et_pass"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="Autofill,VisualLintTextFieldSize" />
+
+    <!-- Кнопка Sign in -->
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="0dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="440dp"
+        android:layout_marginEnd="30dp"
+        android:alpha="0.7"
+        android:text="@string/btn_login"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:backgroundTint="@color/grayish_green_shade"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck,VisualLintButtonSize" />
+
+    <!-- Текст регистрации -->
+    <TextView
+        android:id="@+id/tvRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="28dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:minHeight="48dp"
+        android:text="@string/txt_register"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+
+    <!-- Кнопка Профиль -->
+    <Button
+        android:id="@+id/btnProfile"
+        android:layout_width="0dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="92dp"
+        android:alpha="0.7"
+        android:text="@string/prof_title"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:backgroundTint="@color/grayish_green_shade"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck,VisualLintButtonSize" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,38 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MAD Meditation</string>
-
-    <!-- Splash / Onboarding -->
     <string name="splash_title">MAD Meditation</string>
     <string name="ob_title">Привет</string>
-    <string name="ob_desc">Наслаждайся отборочными.\nБудь внимателен. Делай хорошо.</string>
+    <string name="ob_desc">Наслаждайся отборочными.\nБудь внимателен.\nДелай хорошо.</string>
     <string name="btn_signin">Войти в аккаунт</string>
-    <string name="btn_register">Регистрация</string>
     <string name="no_acc">Еще нет аккаунта?</string>
-
-    <!-- Login -->
     <string name="login_title">Sign in</string>
     <string name="et_email">Email</string>
     <string name="et_pass">Пароль</string>
     <string name="btn_login">Sign in</string>
     <string name="txt_register">Зарегистрируйтесь</string>
-
-    <!-- Main -->
+    <string name="feel_title2">С возвращением, Эмиль!</string>
     <string name="feel_title">Каким ты себя ощущаешь сегодня?</string>
     <string name="feel_calm">Спокойный</string>
     <string name="feel_relax">Расслабленный</string>
     <string name="feel_focus">Сосредоточенный</string>
     <string name="feel_excite">Взволнованный</string>
-
-    <!-- Profile -->
     <string name="prof_title">Профиль</string>
     <string name="btn_logout">Выход</string>
     <string name="btn_delete">Удалить</string>
     <string name="btn_close">Закрыть</string>
     <string name="gallery_title">Галерея</string>
-
-    <!-- Messages -->
     <string name="err_empty">Заполните все поля</string>
     <string name="err_email">Некорректный Email</string>
     <string name="ok_login">Вход выполнен успешно</string>
     <string name="msg_feel">Выбрано ощущение: </string>
+    <string name="block_header">Заголовок блока</string>
+    <string name="Short_description">Кратенькое описание блока \n с двумя строчками</string>
+    <string name="more_detailed">подробнее</string>
+    <string name="exit">выход</string>
+    <string name="name">Эмиль</string>
+    <string name="home">Home</string>
+    <string name="music">Music</string>
+    <string name="profile">Profile</string>
+    <string name="_11_00">11:00</string>
+    <string name="_15_55">15:55</string>
+    <string name="_11_11">11:11</string>
+    <string name="_19_11">19:11</string>
+    <string name="plus">+</string>
+    <string name="illustration">Illustration</string>
+
+
 </resources>
