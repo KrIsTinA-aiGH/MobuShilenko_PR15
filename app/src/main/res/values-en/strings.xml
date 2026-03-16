@@ -40,4 +40,7 @@
     <string name="_19_11">19:11</string>
     <string name="plus">+</string>
     <string name="illustration">Illustration</string>
+    <string name="zak">Закрыть</string>
+    <string name="del">Удалить</string>
+    <string name="full_image">Full Image</string>
 </resources>
