@@ -1,65 +1,52 @@
 package com.example.mad_meditation;
 
-import android.annotation.SuppressLint;
+import android.content.Intent; // 1. Нужно для перехода
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
     private LinearLayout selectedLayout = null;
-
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        // Настройка отступов экрана
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            var systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
-        // Массив ID всех блоков с ощущениями
+        ImageView avatarTop = findViewById(R.id.ivUserAvatar);
+        LinearLayout navProfile = findViewById(R.id.navProfile);
+        avatarTop.setOnClickListener(v -> openProfile());
+        navProfile.setOnClickListener(v -> openProfile());
         int[] feelings = {R.id.feelingCalm, R.id.feelingRelax, R.id.feelingFocus, R.id.feelingExcite};
-
         for (int id : feelings) {
             LinearLayout layout = findViewById(id);
             layout.setOnClickListener(v -> {
-                // Если нажали на уже выбранный - снимаем выделение
                 if (selectedLayout == layout) {
-                    reset(layout);
-                    selectedLayout = null;
+                    // ПРОВЕРКА 1: Если нажали на тот же самый блок, который уже выбран...
+                    reset(layout); //снимаем с него выделение
+                    selectedLayout = null; //и запоминаем, что теперь ничего не выбрано.
                 } else {
-                    // Сбрасываем предыдущий выбор и выделяем новый
                     if (selectedLayout != null) reset(selectedLayout);
-                    select(layout);
-                    selectedLayout = layout;
+                    //ыл ли до этого выбран какой-то другой блок? Если да, то сбрасываем его цвет назад в белый.
+                    select(layout); // Выделяем новый нажатый блок
+                    selectedLayout = layout; // Запоминаем этот блок как текущий выбранный
                 }
             });
         }
     }
-
-    // Короткие методы для смены цвета
-    private void select(LinearLayout l) {
-        ImageView img = (ImageView) l.getChildAt(0);
-        // Ваш grayish_green_shade
-        int COLOR_SELECTED = 0xFF7C9A92;
-        img.setBackgroundColor(COLOR_SELECTED);
-        img.setScaleX(1.1f); img.setScaleY(1.1f);
+    private void openProfile() {
+        startActivity(new Intent(this, Profile.class));
     }
-
-    private void reset(LinearLayout l) {
+    private void select(LinearLayout l) { // Метод для выделения блока
         ImageView img = (ImageView) l.getChildAt(0);
-        int COLOR_DEFAULT = Color.WHITE;
-        img.setBackgroundColor(COLOR_DEFAULT);
-        img.setScaleX(1f); img.setScaleY(1f);
+        // Берем первый элемент внутри блока
+        img.setBackgroundColor(0xFF7C9A92);
+    }
+    private void reset(LinearLayout l) { // Метод для сброса выделения
+        ImageView img = (ImageView) l.getChildAt(0);
+        img.setBackgroundColor(Color.WHITE);
     }
 }

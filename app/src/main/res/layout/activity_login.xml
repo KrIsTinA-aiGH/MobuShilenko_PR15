@@ -6,9 +6,9 @@
     android:layout_height="match_parent"
     android:background="@color/dark_cold_shade"
     tools:ignore="MissingClass">
-    <!-- УБРАЛ android:padding="30dp" -->
 
-    <!-- Декоративный фон (листья) - на весь низ БЕЗ отступов -->
+
+
 
     <!-- Логотип -->
 

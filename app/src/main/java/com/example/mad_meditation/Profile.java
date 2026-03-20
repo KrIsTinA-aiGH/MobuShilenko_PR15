@@ -2,53 +2,40 @@ package com.example.mad_meditation;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
+import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.card.MaterialCardView;
 
-public class Profile extends AppCompatActivity {
 
+public class Profile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_profile);
 
-        // Настройка отступов для системных баров
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+        TextView tvExit = findViewById(R.id.tvExit);
+        tvExit.setOnClickListener(v -> {
+            startActivity(new Intent(this, LoginActivity.class));
+            finish();
         });
 
-        // --- НАСТРОЙКА КЛИКОВ ПО ФОТОГРАФИЯМ ---
+        int[] photoIds = {R.id.cardPhoto1, R.id.cardPhoto2, R.id.cardPhoto3, R.id.cardPhoto4};
+        // Создаем массив всех четырех карточек с фото
+        int[] drawables = {R.drawable._2556223_paisagem15, R.drawable.unknown_6, R.drawable.sunset_d863fdd4, R.drawable.unknown_7};
+        // Создаем второй массив самих картинок, которые должны открыться
 
-        // Фото 1
-        MaterialCardView cardPhoto1 = findViewById(R.id.cardPhoto1);
-        cardPhoto1.setOnClickListener(v -> openFullImage(R.drawable._2556223_paisagem15));
-
-        // Фото 2
-        MaterialCardView cardPhoto2 = findViewById(R.id.cardPhoto2);
-        cardPhoto2.setOnClickListener(v -> openFullImage(R.drawable.unknown_6));
-
-        // Фото 3
-        MaterialCardView cardPhoto3 = findViewById(R.id.cardPhoto3);
-        cardPhoto3.setOnClickListener(v -> openFullImage(R.drawable.sunset_d863fdd4));
-
-        // Фото 4
-        MaterialCardView cardPhoto4 = findViewById(R.id.cardPhoto4);
-        cardPhoto4.setOnClickListener(v -> openFullImage(R.drawable.unknown_7));
+        for (int i = 0; i < photoIds.length; i++) {
+            MaterialCardView card = findViewById(photoIds[i]);
+            int finalI = i;
+            // Создаем копию номера i, Эта копия "приклеивается" к этой конкретной карточке навсегда.
+            card.setOnClickListener(v -> openFullImage(drawables[finalI]));
+        }
     }
-
-    // Метод для открытия полного изображения
     private void openFullImage(int imageId) {
-        Intent intent = new Intent(Profile.this, activity_full_image.class);
-        intent.putExtra("IMAGE_ID", imageId); // Передаем ID картинки
+        Intent intent = new Intent(this, activity_full_image.class);
+        intent.putExtra("IMAGE_ID", imageId); //Метод putExtra кладет данные внутрь конверта
         startActivity(intent);
     }
 }
